@@ -13,9 +13,14 @@ def index(request):
     
     if request.method == 'GET':
         print('You hit a GET method')
+        print(request.GET.get('search'))
         return Response(courses)
     elif request.method == 'POST':
         print('You hit a POST method')
+        data = request.data
+        print('******')
+        print(data['name'])
+        print('******')
         return Response(courses)
     elif request.method == 'PUT':
         print('You hit a PUT method')

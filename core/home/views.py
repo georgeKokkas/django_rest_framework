@@ -2,7 +2,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 
-@api_view(['GET', 'POST'])
+@api_view(['GET', 'POST', 'PUT'])
 def index(request):
 
     courses = {
@@ -17,4 +17,6 @@ def index(request):
     elif request.method == 'POST':
         print('You hit a POST method')
         return Response(courses)
-    
+    elif request.method == 'PUT':
+        print('You hit a PUT method')
+        return Response(courses)
